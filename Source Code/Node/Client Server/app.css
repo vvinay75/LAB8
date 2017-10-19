@@ -2,7 +2,7 @@
 
 .menu {
   list-style: upper-latin;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   padding: 0 0 0.5em;
 }
 
@@ -22,8 +22,8 @@
 
 .tblSpan
 {
-  width:202px;
+  width:200px;
   height:auto;
-  margin:22px 22px 22px 22px;
+  margin:20px 20px 20px 20px;
 
 }

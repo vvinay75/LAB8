@@ -1,13 +1,10 @@
-/**
- * Created by Achyuth on 10/24/2016.
- */
 var http = require('http');
 
 // Options to be used by request
 var options = {
     host: 'localhost',
     port: '8081',
-    path: '/flickr.html'
+    path: '/index.html'
 };
 
 // Callback function is used to deal with response

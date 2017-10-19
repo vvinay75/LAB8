@@ -13,15 +13,13 @@ angular.module('myApp', [])
             if (placeEntered != null && placeEntered != "" && searchQuery != null && searchQuery != "") {
                 document.getElementById('div_ReviewList').style.display = 'none';
                 //This is the API that gives the list of venues based on the place and search query.
-                var handler1 = $http.get("http://flickr.com/services/auth/?" +
-                    "api_key=713bce5faa73c8b39185aef0f12f5041&perms=delete&api_sig=b14c38e326d50975");
-                /*var handler = $http.get("https://api.foursquare.com/v2/venues/search" +
-                    "?client_id=Q0ENF1YHFTNPJ31DCF13ALLENJW0P5MTH13T1SA0ZP1MUOCI" +
-                    "&client_secret=ZH4CRZNEWBNTALAE3INIB5XG0QI12R4DT5HKAJLWKYE1LHOG" +
+                var handler = $http.get("https://api.foursquare.com/v2/venues/search" +
+                    "?client_id=BLYQEB1ISFTKJ0D5DJ2UFVGZPP12UG0DYVBKLE4NZ0QLU1UI" +
+                    "&client_secret=QISJDAPL421QMQAK1HJKGPJITJDCDRJDTRLKYMHWWE33HEQX" +
                     "&v=20160215&limit=5" +
                     "&near=" + placeEntered +
-                    "&query=" + searchQuery); **/
-                handler1.success(function (data) {
+                    "&query=" + searchQuery);
+                handler.success(function (data) {
 
                     if (data != null && data.response != null && data.response.venues != undefined && data.response.venues != null) {
                         for (var i = 0; i < data.response.venues.length; i++) {
@@ -57,7 +55,7 @@ angular.module('myApp', [])
 						console.log($scope.mostRecentReview);
                         //This is the Alchemy API for getting the sentiment of the most recent review for a place.
                         var callback = $http.get("http://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment" +
-                            "?apikey=f6ee898387554f6ba554991f1871a256" +
+                            "?apikey=d0e7bf68cdda677938e6c186eaf2b755ef737cd8" +
                             "&outputMode=json&text=" + $scope.mostRecentReview.text);
                         callback.success(function (data) {
                             if(data!=null && data.docSentiment!=null)
